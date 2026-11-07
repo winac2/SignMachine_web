@@ -41,7 +41,7 @@ app.add_middleware(
         "http://localhost:3000",
         frontend_url,
         ],
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
 )
