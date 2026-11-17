@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
+import {useLanguage} from "@/contexts/LanguageContext";
 import {
   FilesetResolver,
   HandLandmarker,
@@ -26,6 +26,7 @@ export default function WebcamCapture({
   gestureName,
   contributorName,
 }: Props) {
+  const {t} = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -43,13 +44,13 @@ export default function WebcamCapture({
   const [collecting, setCollecting] = useState(false);
   const [consent, setConsent] = useState(false);
   const [sampleCount, setSampleCount] = useState(0);
-  const [status, setStatus] = useState("Camera is off");
+  const [status, setStatus] = useState(t.capture.offcam);
   const [error, setError] = useState("");
 
   // ----------------------------------
   // Upload buffered samples
   // ----------------------------------
-
+  // const {t} = useLanguage();
   
   async function flushBatch() {
   if (uploadingRef.current || !sessionIdRef.current) {
@@ -381,13 +382,14 @@ export default function WebcamCapture({
   }, []);
 
   return (
+    
     <div className="space-y-6">
       <div className="flex flex-wrap justify-between gap-3">
         <div>
-          <p className="text-sm text-gray-400">Selected gesture</p>
+          <p className="text-sm text-gray-400">{t.capture.selectedGesture}</p>
           <h2 className="text-2xl font-semibold">{gestureName}</h2>
           <p className="text-sm text-gray-400">
-            Contributor: {contributorName || "Prefer not to say"}
+            {t.contribute.contributor}: {contributorName || t.contribute.defaultName}
           </p>
         </div>
 
@@ -417,7 +419,7 @@ export default function WebcamCapture({
             onClick={startCamera}
             className="rounded-lg bg-blue-600 px-5 py-3 font-medium"
           >
-            Start Camera
+            {t.capture.startCamera}
           </button>
         ) : (
           <button
@@ -425,7 +427,7 @@ export default function WebcamCapture({
             disabled={collecting}
             className="rounded-lg bg-gray-700 px-5 py-3 font-medium disabled:opacity-40"
           >
-            Stop Camera
+            {t.capture.stopCamera}
           </button>
         )}
 
@@ -435,14 +437,14 @@ export default function WebcamCapture({
             disabled={!cameraOn || !consent}
             className="rounded-lg bg-green-600 px-5 py-3 font-medium disabled:opacity-40"
           >
-            Start Collection
+            {t.capture.startCollection}
           </button>
         ) : (
           <button
             onClick={stopCollection}
             className="rounded-lg bg-red-600 px-5 py-3 font-medium"
           >
-            Stop Collection
+            {t.capture.stopCollection}
           </button>
         )}
       </div>
@@ -456,15 +458,12 @@ export default function WebcamCapture({
           className="mt-1"
         />
         <span>
-          I agree to contribute my hand landmark data to the
-          Sign Machine Community dataset. The website sends
-          extracted landmarks and contribution metadata, not
-          the raw webcam video.
+          {t.capture.agreement}
         </span>
       </label>
 
       <div className="rounded-xl border border-white/10 p-4">
-        <p className="text-sm text-gray-400">Uploaded samples</p>
+        <p className="text-sm text-gray-400">{t.capture.upedsample}</p>
         <p className="text-3xl font-bold">{sampleCount}</p>
       </div>
 

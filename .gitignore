@@ -13,3 +13,6 @@ out/
 # IDE
 .vscode/
 .codex/
+!.env.example
+
+start.bat

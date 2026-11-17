@@ -11,16 +11,17 @@ import {
   AlertCircle,
   ShieldCheck,
 } from "lucide-react";
-
+import {useLanguage} from "@/contexts/LanguageContext";
 import { getGestures, type Gesture } from "@/lib/api";
 
 export default function ContributePage() {
   const router = useRouter();
+  const {t} = useLanguage();
 
   const [gestures, setGestures] = useState<Gesture[]>([]);
   const [selectedGesture, setSelectedGesture] = useState("");
   const [contributorName, setContributorName] =
-    useState("Prefer not to say");
+    useState(t.contribute.defaultName);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -58,7 +59,7 @@ export default function ContributePage() {
     }
 
     const finalName =
-      contributorName.trim() || "Prefer not to say";
+      contributorName.trim() || t.contribute.defaultName;
 
     // Prepare contribution information for the next step.
     sessionStorage.setItem(
@@ -86,16 +87,15 @@ export default function ContributePage() {
           </div>
 
           <p className="mt-7 text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
-            Community contribution
+            {t.contribute.commmunitycontribution}
           </p>
 
-          <h1 className="mt-4 text-4xl font-bold md:text-5xl">
-            Contribute Data
+          <h1 className="mt-4 text-4xl font-bold md:text-5xl text-white">
+            {t.contribute.contributedata}
           </h1>
 
           <p className="mx-auto mt-5 max-w-xl leading-7 text-slate-400">
-            Help improve Sign Machine by contributing
-            your hand gesture data.
+            {t.contribute.subtitle}
           </p>
 
         </div>
@@ -109,13 +109,13 @@ export default function ContributePage() {
             <div>
 
               <label className="mb-3 block text-sm font-semibold text-white">
-                01. Select a gesture
+                {t.contribute.select}
               </label>
 
               {loading ? (
                 <div className="flex items-center gap-3 rounded-xl border border-white/10 p-4 text-slate-400">
                   <LoaderCircle className="animate-spin" size={20} />
-                  Loading gestures...
+                  {t.contribute.loading}
                 </div>
               ) : (
                 <select
@@ -134,7 +134,7 @@ export default function ContributePage() {
               )}
 
               <p className="mt-3 text-sm text-slate-500">
-                Choose the gesture you want to contribute.
+                {t.contribute.choose}
               </p>
 
             </div>
@@ -144,7 +144,7 @@ export default function ContributePage() {
 
               <label className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
                 <User size={17} />
-                02. Contributor Name
+                02. {t.contribute.contributorname}
               </label>
 
               <input
@@ -152,13 +152,12 @@ export default function ContributePage() {
                 value={contributorName}
                 onChange={(e) => setContributorName(e.target.value)}
                 maxLength={60}
-                placeholder="Prefer not to say"
+                placeholder={t.contribute.defaultName}
                 className="w-full rounded-xl border border-white/10 bg-[#080D18] px-5 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500"
               />
 
               <p className="mt-3 text-sm leading-6 text-slate-500">
-                You can use a nickname or leave the default value.
-                Your real name is not required.
+                {t.contribute.name}
               </p>
 
             </div>
@@ -173,13 +172,11 @@ export default function ContributePage() {
 
               <div>
                 <p className="font-semibold text-green-300">
-                  Privacy matters
+                  {t.contribute.privacy}
                 </p>
 
                 <p className="mt-2 text-sm leading-6 text-slate-400">
-                  No account or email is required.
-                  Your contribution will be associated
-                  with a generated contributor identifier.
+                  {t.contribute.content1}
                 </p>
               </div>
 
@@ -200,24 +197,23 @@ export default function ContributePage() {
                 disabled={loading || gestures.length === 0}
                 className="flex w-full items-center justify-center gap-3 rounded-xl bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                Continue to Camera
+                {t.contribute.continue}
                 <ArrowRight size={20} />
               </button>
             ) : (
               <div className="rounded-xl border border-blue-400/20 bg-blue-400/5 p-5">
 
                 <p className="font-semibold text-blue-300">
-                  Contribution information prepared!
+                  {t.contribute.contri_info}
                 </p>
 
                 <div className="mt-4 space-y-2 text-sm text-slate-300">
-                  <p>Gesture: <strong>{selectedGesture}</strong></p>
-                  <p>Contributor: <strong>{contributorName.trim() || "Prefer not to say"}</strong></p>
+                  <p>{t.contribute.gesture}: <strong>{selectedGesture}</strong></p>
+                  <p>{t.contribute.contributor}: <strong>{contributorName.trim() || t.contribute.defaultName}</strong></p>
                 </div>
 
                 <p className="mt-4 text-xs leading-5 text-slate-500">
-                  Camera capture will be available in the next development step.
-                  No data has been submitted yet.
+                  {t.contribute.note}
                 </p>
 
                 <button
@@ -225,7 +221,7 @@ export default function ContributePage() {
                   onClick={() => setReady(false)}
                   className="mt-4 text-sm text-blue-400 hover:text-blue-300"
                 >
-                  Edit information
+                  {t.contribute.editInfo}
                 </button>
 
               </div>
@@ -236,7 +232,7 @@ export default function ContributePage() {
         </div>
 
         <p className="mt-8 text-center text-sm text-slate-500">
-          Thank you for supporting Sign Machine.
+          {t.contribute.thanksbyW1N4C}
         </p>
 
       </div>

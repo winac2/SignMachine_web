@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import WebcamCapture from "@/components/WebcamCapture";
-
+import {useLanguage} from "@/contexts/LanguageContext";
 interface Contribution {
   gesture_name: string;
   contributor_name: string;
 }
 
 export default function CapturePage() {
+  const {t} = useLanguage();
   const router = useRouter();
 
   const [contribution, setContribution] =
@@ -56,12 +57,12 @@ export default function CapturePage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
       <h1 className="mb-3 text-3xl font-bold">
-        Collect Hand Landmarks
+        {t.capture.title}
       </h1>
 
       <p className="mb-8 text-gray-400">
-        Position your hand clearly in front of the camera.
-        Keep your hand inside the camera frame while collecting.
+        {t.capture.content1}
+        {t.capture.content2}
       </p>
 
       <WebcamCapture

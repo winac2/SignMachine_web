@@ -1,3 +1,6 @@
+"use client";
+
+import {useLanguage} from "@/contexts/LanguageContext";
 
 import Link from "next/link";
 import {
@@ -12,28 +15,37 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const features = [
+
+
+
+export default function Home() {
+
+
+  const {t} = useLanguage();
+
+  const features = [
   {
     icon: Camera,
-    title: "Simple Collection",
+    title: t.home.box1Title,
     description:
-      "Contribute hand gesture data directly through your browser camera.",
+      t.home.box1Description,
   },
   {
     icon: Database,
-    title: "Open Dataset",
+    title: t.home.box2Title,
     description:
-      "Help build a diverse dataset for improving hand gesture recognition.",
+      t.home.box2Description,
   },
   {
     icon: BrainCircuit,
-    title: "Better AI",
+    title: t.home.box3Title,
     description:
-      "Your contributions help improve Sign Machine's recognition capabilities.",
+      t.home.box3Description,
   },
-];
+  ];
 
-export default function Home() {
+
+  
   return (
     <main className="min-h-screen bg-[#080D18] text-white">
 
@@ -53,7 +65,7 @@ export default function Home() {
               Every gesture
               <br />
               tells a{" "}
-              <span className="text-blue-400">story.</span>
+              <span className="text-blue-400">story</span>
             </h1>
 
             <p className="mt-7 max-w-lg text-lg leading-8 text-slate-400">

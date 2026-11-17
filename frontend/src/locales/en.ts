@@ -1,0 +1,85 @@
+const en = {
+  navbar: {
+    home: "Home",
+    contribute: "Contribute",
+    about: "About",
+    community: "Community",
+    contributeData: "Contribute Data",
+  },
+
+  home: {
+    title: "Sign Machine Community",
+    subtitle: "Help build an open hand gesture dataset.",
+    button: "Contribute Data",
+    aboutTitle: "About the Project",
+    aboutDescription:"An open community platform for collecting hand gesture data.",
+    featuresTitle: "Why Contribute?",
+    feature1: "Support accessibility",
+    feature2: "Build a better dataset",
+    feature3: "Help improve sign recognition",
+
+    box1Title: "Simple Collection",
+    box1Description:
+      "Contribute hand gesture data directly through your browser camera.",
+    box2Title: "Open Dataset",
+    box2Description:
+      "Help build a diverse dataset for improving hand gesture recognition.",
+    box3Title: "Better AI",
+    box3Description:
+      "Your contributions help improve Sign Machine's recognition capabilities.",
+  },
+
+  contribute: {
+    title: "Contribute Data",
+    description: "Help improve the Sign Machine gesture dataset.",
+    selectGesture: "Select a Gesture",
+    contributorName: "Contributor Name",
+    defaultName: "Prefer not to say",
+    continue: "Continue",
+    commmunitycontribution:"Community contribution",
+    contributedata:"Contribute Data",
+    subtitle:"Help improve Sign Machine by contributing your hand gesture data.",
+    select:"01. Select a gesture",
+    loading:"Loading gestures...",
+    choose:"Choose the gesture you want to contribute.",
+    contributorname: "Contributor Name",
+    name:"You can use a nickname or leave the default value. Your real name is not required.",
+    privacy:"Privacy matters",
+    content1:"No account or email is required. Your contribution will be associated with a generated contributor identifier.",
+    co1ntinue:"To Camera",
+    contri_info:"contribution information has been prepared!",
+    gesture:"Gesture",
+    contributor:"Contributor",
+    note:"Camera capture will be available in the next step. No data has been submitted yet.",
+    editInfo:"Edit information",
+    thanksbyW1N4C:"Thank you for supporting Sign Machine.",
+  },
+
+  capture: {
+    offcam:"Camera is off",
+    title: "Collect Hand Landmarks",
+    startCamera: "Start Camera",
+    stopCamera: "Stop Camera",
+    startCollection: "Start Collection",
+    stopCollection: "Stop Collection",
+    uploadedSamples: "Uploaded Samples",
+    cameraReady: "Camera is ready",
+    cameraError: "Unable to access camera",
+    noHand: "No hand detected",
+    uploadSuccess: "Data uploaded successfully",
+    uploadError: "Unable to upload data",
+    content1: "Position your hand clearly in front of the camera.",
+    content2: "Keep your hand inside the camera frame while collecting.",
+    agreement:"I agree to contribute my hand landmark data to the Sign Machine Community dataset. The website sends the only extracted landmarks and contribution metadata, not the raw webcam video.",
+    selectedGesture: "Selected Gesture",
+    upedsample:"Uploaded Samples",
+  },
+
+  footer: {
+    description: "Building an open hand gesture dataset together.",
+    des:"Building an inclusive future through technology.",
+    rights: "All rights reserved.",
+  },
+};
+
+export default en;
