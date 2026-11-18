@@ -27,6 +27,33 @@ const vi = {
     box3Title: "AI tốt hơn",
     box3Description:
       "Dữ liệu cử chỉ bàn tay giúp Sign Machine tạo khả năng nhận diện ngôn ngữ ký hiệu tốt hơn.",
+
+    getinvoled: "Tham gia",
+    threeSteps: "Ba bước nhỏ - Một đóng góp lớn",
+    step1: "Chọn cử chỉ",
+    s1ct: "Chọn cử chỉ bàn tay bạn muốn đóng góp.",
+    step2: "Tạo dữ liệu",
+    s2ct: "Làm theo hướng dẫn và sử dụng webcam.",
+    step3: "Xây dựng bộ dữ liệu",
+    s3ct: "Gửi dữ liệu của bạn để giúp cải thiện bộ dữ liệu.",
+    join: "Đóng góp dữ liệu",
+
+    about: "Về dự án",
+    a1:"Công nghệ cho một thế giới hòa nhập",
+    subabout: "Sign Machine là một dự án công nghệ tập trung vào nhận diện ngôn ngữ ký hiệu. Nền tảng cộng đồng của chúng tôi cho phép mọi người đóng góp dữ liệu và giúp cải thiện các mô hình nhận diện",
+    
+    openproject: "Dự án cộng đồng",
+    helpus: "Hãy giúp chúng tôi xây dựng một thế giới hòa nhập hơn. Đóng góp dữ liệu cử chỉ bàn tay và hỗ trợ phát triển Sign Machine",
+    startcontributing: "Bắt đầu đóng góp",
+    learnmore: "Tìm hiểu thêm",
+    noaccount: "Không cần tài khoản hoặc email. Mọi người đều có thể đóng góp",
+    communitydriven: "thúc đẩy bởi cộng đồng",
+    hand: "Nhận diện ngôn ngữ ký hiệu",
+    poweredby: "Được hỗ trợ bởi đóng góp cộng đồng",
+
+    k1:"Mọi đóng góp",
+    k2:"đều",
+    k3:"đáng quý",
   },
 
   contribute: {

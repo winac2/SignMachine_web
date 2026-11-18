@@ -58,20 +58,18 @@ export default function Home() {
           <div>
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/10 px-4 py-2 text-sm text-blue-300">
               <Globe size={16} />
-              Open Community Project
+              {t.home.openproject}
             </div>
 
             <h1 className="text-5xl font-bold leading-tight tracking-tight md:text-7xl">
-              Every gesture
+              {t.home.k1}
               <br />
-              tells a{" "}
-              <span className="text-blue-400">story</span>
+              {t.home.k2}{" "}
+              <span className="text-blue-400">{t.home.k3}</span>
             </h1>
 
             <p className="mt-7 max-w-lg text-lg leading-8 text-slate-400">
-              Help us build a more inclusive world.
-              Contribute hand gesture data and support
-              the development of Sign Machine.
+              {t.home.helpus}
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -80,7 +78,7 @@ export default function Home() {
                 href="/contribute"
                 className="flex items-center gap-3 rounded-xl bg-blue-600 px-7 py-4 font-semibold transition hover:bg-blue-500"
               >
-                Start Contributing
+                {t.home.startcontributing}
                 <ArrowRight size={19} />
               </Link>
 
@@ -88,14 +86,14 @@ export default function Home() {
                 href="#about"
                 className="rounded-xl border border-white/10 px-7 py-4 font-semibold text-slate-300 transition hover:bg-white/5"
               >
-                Learn More
+                {t.home.learnmore}
               </a>
 
             </div>
 
             <div className="mt-10 flex items-center gap-3 text-sm text-slate-500">
               <ShieldCheck size={18} className="text-green-400" />
-              No account required. Everyone can contribute.
+              {t.home.noaccount}
             </div>
           </div>
 
@@ -105,11 +103,11 @@ export default function Home() {
 
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium text-slate-300">
-                  Sign Machine AI
+                  Sign Machine
                 </span>
 
                 <span className="rounded-full bg-green-400/10 px-3 py-1 text-xs text-green-400">
-                  Community Driven
+                  {t.home.communitydriven}
                 </span>
               </div>
 
@@ -120,11 +118,11 @@ export default function Home() {
                 </div>
 
                 <p className="mt-7 text-xl font-semibold">
-                  Hand Gesture Recognition
+                  {t.home.hand}
                 </p>
 
                 <p className="mt-2 text-sm text-slate-400">
-                  Powered by community contributions
+                  {t.home.poweredby}
                 </p>
 
               </div>
@@ -154,18 +152,15 @@ export default function Home() {
           <div className="mx-auto max-w-2xl text-center">
 
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
-              About the project
+              {t.home.about}
             </p>
 
             <h2 className="mt-5 text-3xl font-bold md:text-4xl">
-              Technology for a more inclusive world.
+              {t.home.a1}
             </h2>
 
             <p className="mt-6 leading-8 text-slate-400">
-              Sign Machine is an assistive technology project
-              focused on hand gesture recognition.
-              Our community platform allows people to contribute
-              data and help improve recognition models.
+              {t.home.subabout}
             </p>
 
           </div>
@@ -206,20 +201,20 @@ export default function Home() {
 
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
-              Get involved
+              {t.home.getinvoled}
             </p>
 
             <h2 className="mt-5 text-3xl font-bold">
-              Three steps. One meaningful contribution.
+              {t.home.threeSteps}
             </h2>
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-3">
 
             {[
-              ["01", "Choose a gesture", "Select the hand gesture you want to contribute."],
-              ["02", "Capture your data", "Follow the instructions and use your webcam."],
-              ["03", "Submit contribution", "Send your landmarks to help improve our dataset."],
+              ["01", t.home.step1, t.home.s1ct],
+              ["02", t.home.step2, t.home.s2ct],
+              ["03", t.home.step3, t.home.s3ct],
             ].map(([number, title, description]) => (
               <div key={number} className="border-l-2 border-blue-500/40 pl-7">
                 <span className="text-3xl font-bold text-blue-400">
@@ -241,7 +236,7 @@ export default function Home() {
               href="/contribute"
               className="inline-flex items-center gap-3 rounded-xl bg-blue-600 px-8 py-4 font-semibold transition hover:bg-blue-500"
             >
-              Join the Community
+              {t.home.join}
               <HeartHandshake size={20} />
             </Link>
           </div>

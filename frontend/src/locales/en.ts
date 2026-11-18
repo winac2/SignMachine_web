@@ -27,6 +27,33 @@ const en = {
     box3Title: "Better AI",
     box3Description:
       "Your contributions help improve Sign Machine's recognition capabilities.",
+
+    getinvoled: "Get Involved",
+    threeSteps: "Three Steps - One meaningful contribution",
+    step1: "Choose a gesture",
+    s1ct: "Select the hand gesture you want to contribute.",
+    step2: "Capture your data",
+    s2ct: "Follow the instructions and use your webcam.",
+    step3: "Submit your contribution",
+    s3ct: "Send your landmarks to help improve the dataset.",
+    join: "Contribute Data",
+
+    about: "About the Project",
+    a1:"Technology for a more inclusive world",
+    subabout: "Sign Machine is an assistive technology project focused on hand gesture recognition. Our community platform allows people to contribute data and help improve recognition models",
+
+    openproject: "Open Community Project",
+    helpus: "Help us build a more inclusive world. Contribute hand gesture data and support the development of Sign Machine",
+    startcontributing: "Start Contributing",
+    learnmore: "Learn More",
+    noaccount: "No account or email is required. Everyone can contribute.",
+    communitydriven: "Community Driven",
+    hand: "Hand Gesture Recognition",
+    poweredby: "Powered by community contributions",
+
+    k1:"Every gesture",
+    k2:"brings",
+    k3:"hope",
   },
 
   contribute: {
